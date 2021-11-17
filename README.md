@@ -1,1 +1,1 @@
-# AWS-Stock-Price-Tracker
+# AWS Stock Price Tracker

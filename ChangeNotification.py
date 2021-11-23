@@ -16,7 +16,7 @@ def lambda_handler(event, context):
 # define function that detects updates in the Change DynamoDB table
 def handle_modify(record):
 
-    # extract data from the Change table DynamoDB stream
+    # extract most recent record from the Change table DynamoDB stream
     newImage = record['dynamodb']['NewImage']
     Symbol  = newImage['Symbol']['S']
     newPercent = newImage['Percent']['N']   # get the latest percentage change
@@ -27,10 +27,18 @@ def handle_modify(record):
     desiredPercent = 1.5
     
     if (PercentFloat > desiredPercent):
+        
+        # initiate SNS via boto3
         client = boto3.client('sns')
+        
         response = client.publish(
+            # specify which SNS topic to publish to
             TargetArn = "arn:aws:sns:us-east-1:135181374938:StockNotifTest",
+            
+            # subject of the email notification
             Subject = "Your stock " + Symbol + " is " + str(PercentFloat) + "% up!",
+            
+            # body of the email notification
             Message = "Take a look at the " + Symbol + " stock. That stock is HOT! It's " + str(PercentFloat) + "% up!"
             )
         

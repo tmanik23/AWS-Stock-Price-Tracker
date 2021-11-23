@@ -1,5 +1,4 @@
-{
-    'Records': 
+    Records : 
     [
     {
         'eventID': 'a66b00df45c404d18182bce445165d85',
@@ -34,4 +33,3 @@
                     'eventSourceARN': 'arn:aws:dynamodb:us-east-1:135181374938:table/Change/stream/2021-11-19T03:37:21.697'
     }
     ]
-}

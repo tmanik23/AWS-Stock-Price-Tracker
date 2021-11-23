@@ -1,0 +1,37 @@
+{
+    'Records': 
+    [
+    {
+        'eventID': 'a66b00df45c404d18182bce445165d85',
+        'eventName': 'MODIFY',
+        'eventVersion': '1.1', 
+        'eventSource': 'aws:dynamodb', 
+        'awsRegion': 'us-east-1', 
+        'dynamodb': 
+            {
+                'ApproximateCreationDateTime': 1637293160.0, 
+                'Keys': 
+                {
+                    'Symbol': {'S': 'LCID'}, 
+                    'Cadence': {'S': '5m'}
+                },
+                    'NewImage': 
+                    {
+                        'Percent': {'N': '-0.17'}, 
+                        'Symbol': {'S': 'LCID'}, 
+                        'Cadence': {'S': '5m'}
+                    }, 
+                    'OldImage': 
+                    {
+                        'Percent': {'N': '1.16'}, 
+                        'Symbol': {'S': 'LCID'}, 
+                        'Cadence': {'S': '5m'}
+                    }, 
+                    'SequenceNumber': '4129500000000014099338761', 
+                    'SizeBytes': 77, 
+                    'StreamViewType': 'NEW_AND_OLD_IMAGES'
+            }, 
+                    'eventSourceARN': 'arn:aws:dynamodb:us-east-1:135181374938:table/Change/stream/2021-11-19T03:37:21.697'
+    }
+    ]
+}
